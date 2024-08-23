@@ -44,6 +44,13 @@ if uploaded_file is not None:
     else:
         st.write("No caption generated.")
 
+import base64
+# Function to encode image to base64
+def get_base64_image(image_file):
+    with open(image_file, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+
 # Get base64 of the background image
 img_base64 = get_base64_image("images/back.png")
 
